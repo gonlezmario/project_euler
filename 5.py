@@ -1,18 +1,17 @@
-# Product of the least common multiples
-def isPrime(n): #Includes 1 as prime although it isn't prime!
-    for i in range(2,int(n**0.5)+1):
-        if n%i==0:
+#Evenly divisible function
+def evenlyDivisible(num):
+    for i in range(1, 21):
+        if (num % i != 0):
             return False
-        
     return True
 
-def primeFactors(n):
-    primeFactorsList=[]
-    for i in range(1,int(n**0.5)):
-        if isPrime(i):
-            primeFactorsList.append(i)
-    return primeFactorsList
+i = 1
 
+while True:
+    if(evenlyDivisible(i)):
+        sol = i
+        break
+    else:
+        i += 1
 
-print(isPrime(17))
-
+print(sol)
