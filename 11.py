@@ -21,14 +21,24 @@ i17=[20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 
 i18=[20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54]
 i19=[1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 
-matrix=[i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19] #append rows in columns
+fullMatrix=[i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19] #append rows in columns
 
 #matrix[i][j] to index element from 0 to 19
 
-def verticalDir():
-    return True
+def horizontalDir():
+    finalResult=0
+    for rowNumber in range(20): #At this point fullMatrix[rowNumber] yields the matrix by rows
+        for columNumber in range(16):
+            result=1
+            for i in range(4): 
+                result*=(fullMatrix[rowNumber][columNumber+i])
+            if result>finalResult:
+                finalResult=result
+    return finalResult
 
 def verticalDir():
+    for column in range(20):
+        print(column)
     return True
 
 def diagonalDir45(): #Diagonal direction at 45 degrees
@@ -36,3 +46,6 @@ def diagonalDir45(): #Diagonal direction at 45 degrees
 
 def diagonalDir135(): #Diagonal direction at 135 degrees
     return True
+
+horizontalDir()
+
