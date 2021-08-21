@@ -18,5 +18,3 @@ while get_factors((eulerSum(i)))<factorLimit:
     i+=1
 
 print(eulerSum(i))
-
-
